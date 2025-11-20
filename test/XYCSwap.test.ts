@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: LicenseRef-Degensoft-Aqua-Source-1.1
 
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
-import { expect } from "chai";
-import { ether } from '@1inch/solidity-utils';
+import { ethers } from 'hardhat';
+import { expect, ether } from '@1inch/solidity-utils';
 import "@nomicfoundation/hardhat-chai-matchers";
 
 import { deployFixture, createXYCStrategy, calculateAmountOut } from "./utils";
-
-const { ethers } = require('hardhat');
 
 describe("XYCSwap", function () {
   it("should swap token0 for token1 using aqua.push", async function () {

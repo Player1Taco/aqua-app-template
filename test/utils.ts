@@ -1,16 +1,14 @@
 // SPDX-License-Identifier: LicenseRef-Degensoft-Aqua-Source-1.1
 
 import { ether, deployContract } from '@1inch/solidity-utils';
-import '@nomicfoundation/hardhat-ethers';
+import { ethers } from 'hardhat';
 import { Signer } from 'ethers';
 
 // Import generated types for all contracts
 import { TokenMock } from '../typechain-types/@1inch/solidity-utils/contracts/mocks/TokenMock';
-import { Aqua } from '../typechain-types/@1inch/aqua-protocol/src/Aqua';
+import { Aqua } from '../typechain-types/@1inch/aqua/src/Aqua';
 import { XYCSwap } from '../typechain-types/contracts/XYCSwap';
 import { SwapExecutor } from '../typechain-types/contracts/SwapExecutor';
-
-const { ethers } = require('hardhat');
 
   // Define initial amounts
   const INITIAL_AMOUNT0 = ether('100');

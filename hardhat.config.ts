@@ -1,14 +1,16 @@
-require("dotenv").config();
-require("@nomicfoundation/hardhat-ethers");
-require("@nomicfoundation/hardhat-chai-matchers");
-require("@nomicfoundation/hardhat-verify");
-require('hardhat-deploy');
-require('hardhat-tracer');
-require("@typechain/hardhat");
-require('hardhat-dependency-compiler');
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-/** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
+import "@nomicfoundation/hardhat-ethers";
+import "@nomicfoundation/hardhat-chai-matchers";
+import "@nomicfoundation/hardhat-verify";
+import 'hardhat-deploy';
+import 'hardhat-tracer';
+import "@typechain/hardhat";
+import 'hardhat-dependency-compiler';
+import { HardhatUserConfig } from 'hardhat/config';
+
+const config: HardhatUserConfig = {
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",
@@ -53,3 +55,5 @@ module.exports = {
     ],
   },
 };
+
+export default config;
